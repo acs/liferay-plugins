@@ -99,6 +99,8 @@ public class WebFormPortlet extends MVCPortlet {
 		String portletId = (String)actionRequest.getAttribute(
 			WebKeys.PORTLET_ID);
 
+        Long userId =  themeDisplay.getUserId();
+
 		PortletPreferences preferences =
 			PortletPreferencesFactoryUtil.getPortletSetup(
 				actionRequest, portletId);
@@ -149,6 +151,8 @@ public class WebFormPortlet extends MVCPortlet {
 
 			fieldsMap.put(fieldLabel, actionRequest.getParameter("field" + i));
 		}
+
+        fieldsMap.put("userId", Long.toString(userId));
 
 		Set<String> validationErrors = null;
 

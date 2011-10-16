@@ -99,6 +99,11 @@ public class WebFormUtil {
 				fieldLabel = preferences.getValue(
 					"fieldLabel" + i, StringPool.BLANK);
 			}
+
+            ExpandoColumnLocalServiceUtil.addColumn(
+                expandoTable.getTableId(), "userId",
+                ExpandoColumnConstants.STRING);
+
 		}
 
 		return expandoTable;
